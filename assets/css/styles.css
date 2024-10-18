@@ -1,126 +1,207 @@
+/* 
+Reset margins, padding, and box sizing for all elements 
+to ensure consistent spacing and sizing across browsers
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* 
+Body settings to use a clean font and create a flexbox layout 
+that fills the entire viewport height 
+*/
 body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
 
 /* Navbar Styles */
 .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+    background-color: #333; /* Dark background for the navbar */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding around the navbar content */
 }
 
+/* 
+Container to align the logo and navigation links 
+on opposite sides using Flexbox 
+*/
 .container {
     display: flex;
     justify-content: space-between; /* Logo on the left, links on the right */
-    align-items: center;
+    align-items: center; /* Vertically center-align the items */
 }
 
+/* 
+Logo styling to make it bold and slightly larger than the default text 
+*/
 .navbar .logo {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
+/* 
+Navigation links style: flexbox layout to display them in a row, 
+with spacing between the items 
+*/
 .nav-links {
-    list-style: none;
+    list-style: none; /* Remove bullet points from the list */
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Add space between the links */
 }
 
+/* 
+Style for navigation links: white text with no underline, 
+and slightly increased font size 
+*/
 .nav-links a {
     color: white;
     text-decoration: none;
     font-size: 1.1rem;
 }
 
+/* 
+Hover effect for the navigation links to change the color to blue 
+when the user hovers over them 
+*/
 .nav-links a:hover {
     color: #007bff;
 }
 
 /* Main Content Styles */
+/* 
+Main content section is made a flexbox to center its contents both 
+vertically and horizontally within the page 
+*/
 .main-content {
-    flex: 1;
+    flex: 1; /* Take up the remaining height of the viewport */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 20px; /* Padding around the main content */
 }
 
+/* 
+Box for the "Coming Soon" message with centered text and a border 
+*/
 .coming-soon-box {
     text-align: center;
-    border: 2px solid #333;
-    padding: 30px;
-    border-radius: 10px;
+    border: 2px solid #333; /* Border around the box */
+    padding: 30px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners for the box */
 }
 
+/* 
+Clock icon styling: dark color and margin to create space below it 
+*/
 .coming-soon-box i {
     color: #333;
     margin-bottom: 20px;
 }
 
+/* 
+Heading (h1) inside the "Coming Soon" box, with larger font size 
+and some margin below it 
+*/
 .coming-soon-box h1 {
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
+/* 
+Text inside the "Coming Soon" box, with a medium size and grey color 
+*/
 .coming-soon-box p {
     font-size: 1.2rem;
     color: #666;
 }
 
 /* About Page Styles */
+/* 
+Styling for the About page content, similar to the main content box 
+but applied to About-specific sections 
+*/
 .about-content {
-    padding: 20px;
-    text-align: center;
+    padding: 20px; /* Padding around the content */
+    text-align: center; /* Centered text */
 }
 
+/* 
+About page heading with increased font size and some margin below it 
+*/
 .about-content h2 {
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
+/* 
+About page paragraph text, with a medium size and grey color 
+*/
 .about-content p {
     font-size: 1.2rem;
     color: #666;
 }
 
 /* Footer */
+/* 
+Footer background and text styling: grey background and white text 
+with center alignment 
+*/
 footer {
     background-color: grey;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 20px; /* Padding inside the footer */
 }
 
+/* 
+Style for icons in the footer: white color by default 
+and smooth transition on hover 
+*/
 footer i {
     color: white;
     transition: color 0.3s;
 }
 
+/* 
+Hover effect for the footer icon, changing color to blue 
+*/
 footer i:hover {
     color: #007bff;
 }
 
 /* Mobile responsiveness */
+/* 
+Media query for screens smaller than 768px to ensure 
+mobile-friendly layout 
+*/
 @media (max-width: 768px) {
+    /* 
+    Stack the navbar content vertically 
+    and align items to the start (left) 
+    */
     .navbar {
         flex-direction: column;
         align-items: flex-start;
     }
 
+    /* 
+    Ensure the "Coming Soon" box is full width on smaller screens 
+    and adjust the padding 
+    */
     .coming-soon-box {
         width: 100%;
         padding: 20px;
     }
 
+    /* 
+    Decrease the font size of the heading and paragraph 
+    for better readability on smaller screens 
+    */
     .coming-soon-box h1 {
         font-size: 1.5rem;
     }
